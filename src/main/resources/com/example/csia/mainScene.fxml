@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csia.MainController">
+   <children>
+      <Button fx:id="recordButton" layoutX="8.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToRecordScene" prefHeight="95.0" prefWidth="122.0" text="Record">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="quoteOfTheDayButton" layoutX="140.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToQODScene" prefHeight="95.0" prefWidth="122.0" text="Quote of the day" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeButton" layoutX="663.0" layoutY="20.0" mnemonicParsing="false" onAction="#switchToChangeScene" prefHeight="95.0" prefWidth="122.0" text="Change">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="526.0" layoutY="20.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="122.0" text="Button" />
+      <Button layoutX="387.0" layoutY="20.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="122.0" text="Button" />
+      <DatePicker layoutX="282.0" layoutY="239.0" prefHeight="34.0" prefWidth="230.0" />
+   </children>
+</AnchorPane>
