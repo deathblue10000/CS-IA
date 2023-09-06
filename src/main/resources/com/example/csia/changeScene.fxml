@@ -21,10 +21,10 @@
       </VBox>
       <VBox layoutX="247.0" layoutY="294.0" prefHeight="200.0" prefWidth="26.0" spacing="30.0">
          <children>
-            <CheckBox allowIndeterminate="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
-            <CheckBox allowIndeterminate="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
-            <CheckBox allowIndeterminate="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
-            <CheckBox allowIndeterminate="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
+            <CheckBox mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
+            <CheckBox mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
+            <CheckBox mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
+            <CheckBox mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
          </children>
       </VBox>
       <VBox layoutX="470.0" layoutY="286.0" prefHeight="215.0" prefWidth="150.0" spacing="5.0">
@@ -37,10 +37,10 @@
       </VBox>
       <VBox layoutX="630.0" layoutY="294.0" prefHeight="200.0" prefWidth="26.0" spacing="30.0">
          <children>
-            <CheckBox allowIndeterminate="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
-            <CheckBox allowIndeterminate="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
-            <CheckBox allowIndeterminate="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
-            <CheckBox allowIndeterminate="true" mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
+            <CheckBox mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
+            <CheckBox mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
+            <CheckBox mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
+            <CheckBox mnemonicParsing="false" prefHeight="24.0" prefWidth="29.0" />
          </children>
       </VBox>
       <Label layoutX="114.0" layoutY="237.0" prefHeight="42.0" prefWidth="136.0" text="Current Exercise" />
