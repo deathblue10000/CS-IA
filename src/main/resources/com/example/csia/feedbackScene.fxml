@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csia.feedbackController">
+   <children>
+      <Button fx:id="backButton" layoutX="33.0" layoutY="38.0" mnemonicParsing="false" onAction="#switchToMainScene" text="back" />
+      <Label layoutX="158.0" layoutY="86.0" prefHeight="26.0" prefWidth="86.0" text="Completion">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="317.0" layoutY="86.0" prefHeight="26.0" prefWidth="68.0" text="Intensity">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <VBox layoutX="171.0" layoutY="140.0" prefHeight="220.0" prefWidth="29.0" spacing="35.0">
+         <children>
+            <CheckBox fx:id="comp1" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#comp1Dis" prefHeight="26.0" prefWidth="20.0" selected="true" />
+            <CheckBox fx:id="comp2" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#comp2Dis" prefHeight="26.0" prefWidth="20.0" selected="true" />
+            <CheckBox fx:id="comp3" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#comp3Dis" prefHeight="26.0" prefWidth="20.0" selected="true" />
+            <CheckBox fx:id="comp4" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#comp4Dis" prefHeight="26.0" prefWidth="20.0" selected="true" />
+         </children>
+      </VBox>
+      <VBox layoutX="44.0" layoutY="140.0" prefHeight="220.0" prefWidth="58.0" spacing="20.0">
+         <children>
+            <Label prefHeight="39.0" prefWidth="58.0" text="Exercise 1: " />
+            <Label prefHeight="39.0" prefWidth="58.0" text="Exercise 2: " />
+            <Label prefHeight="39.0" prefWidth="58.0" text="Exercise 3: " />
+            <Label prefHeight="39.0" prefWidth="58.0" text="Exercise 4: " />
+         </children>
+      </VBox>
+      <Label layoutX="516.0" layoutY="88.0" prefHeight="18.0" prefWidth="141.0" text="How difficult was it?">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <VBox fx:id="vBoxInt" layoutX="270.0" layoutY="128.0" prefHeight="242.0" prefWidth="162.0" spacing="40.0">
+         <children>
+            <HBox fx:id="hBoxEx1Int" prefHeight="26.0" prefWidth="162.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="ex1int1" mnemonicParsing="false" onAction="#getEx1Intensity" text="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ex1int" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="ex1int2" mnemonicParsing="false" onAction="#getEx1Intensity" text="2" toggleGroup="$ex1int" />
+                  <RadioButton fx:id="ex1int3" mnemonicParsing="false" onAction="#getEx1Intensity" text="3" toggleGroup="$ex1int" />
+                  <RadioButton fx:id="ex1int4" mnemonicParsing="false" onAction="#getEx1Intensity" text="4" toggleGroup="$ex1int" />
+               </children>
+            </HBox>
+            <HBox fx:id="hBoxEx2Int" prefHeight="26.0" prefWidth="162.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="ex2int1" mnemonicParsing="false" onAction="#getEx2Intensity" text="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ex2int" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="ex2int2" mnemonicParsing="false" onAction="#getEx2Intensity" text="2" toggleGroup="$ex2int" />
+                  <RadioButton fx:id="ex2int3" mnemonicParsing="false" onAction="#getEx2Intensity" text="3" toggleGroup="$ex2int" />
+                  <RadioButton fx:id="ex2int4" mnemonicParsing="false" onAction="#getEx2Intensity" text="4" toggleGroup="$ex2int" />
+               </children>
+            </HBox>
+            <HBox fx:id="hBoxEx3Int" prefHeight="26.0" prefWidth="162.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="ex3int1" mnemonicParsing="false" onAction="#getEx3Intensity" text="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ex3int" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="ex3int2" mnemonicParsing="false" onAction="#getEx3Intensity" text="2" toggleGroup="$ex3int" />
+                  <RadioButton fx:id="ex3int3" mnemonicParsing="false" onAction="#getEx3Intensity" text="3" toggleGroup="$ex3int" />
+                  <RadioButton fx:id="ex3int4" mnemonicParsing="false" onAction="#getEx3Intensity" text="4" toggleGroup="$ex3int" />
+               </children>
+            </HBox>
+            <HBox fx:id="hBoxEx4Int" prefHeight="26.0" prefWidth="162.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="ex4int1" mnemonicParsing="false" onAction="#getEx4Intensity" text="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ex4int" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="ex4int2" mnemonicParsing="false" onAction="#getEx4Intensity" text="2" toggleGroup="$ex4int" />
+                  <RadioButton fx:id="ex4int3" mnemonicParsing="false" onAction="#getEx4Intensity" text="3" toggleGroup="$ex4int" />
+                  <RadioButton fx:id="ex4int4" mnemonicParsing="false" onAction="#getEx4Intensity" text="4" toggleGroup="$ex4int" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox fx:id="vBoxDiff" layoutX="505.0" layoutY="128.0" prefHeight="234.0" prefWidth="162.0" spacing="40.0">
+         <children>
+            <HBox fx:id="hBoxEx1Diff" prefHeight="26.0" prefWidth="162.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="ex1Diff1" mnemonicParsing="false" onAction="#getEx1Diff" text="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ex1diff" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="ex1Diff2" mnemonicParsing="false" onAction="#getEx1Diff" text="2" toggleGroup="$ex1diff" />
+                  <RadioButton fx:id="ex1Diff3" mnemonicParsing="false" onAction="#getEx1Diff" text="3" toggleGroup="$ex1diff" />
+                  <RadioButton fx:id="ex1Diff4" mnemonicParsing="false" onAction="#getEx1Diff" text="4" toggleGroup="$ex1diff" />
+               </children>
+            </HBox>
+            <HBox fx:id="hBoxEx2Diff" prefHeight="26.0" prefWidth="162.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="ex2Diff1" mnemonicParsing="false" onAction="#getEx2Diff" text="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ex2diff" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="ex2Diff2" mnemonicParsing="false" onAction="#getEx2Diff" text="2" toggleGroup="$ex2diff" />
+                  <RadioButton fx:id="ex2Diff3" mnemonicParsing="false" onAction="#getEx2Diff" text="3" toggleGroup="$ex2diff" />
+                  <RadioButton fx:id="ex2Diff4" mnemonicParsing="false" onAction="#getEx2Diff" text="4" toggleGroup="$ex2diff" />
+               </children>
+            </HBox>
+            <HBox fx:id="hBoxEx3Diff" prefHeight="26.0" prefWidth="162.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="ex3Diff1" mnemonicParsing="false" onAction="#getEx3Diff" text="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ex3diff" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="ex3Diff2" mnemonicParsing="false" onAction="#getEx3Diff" text="2" toggleGroup="$ex3diff" />
+                  <RadioButton fx:id="ex3Diff3" mnemonicParsing="false" onAction="#getEx3Diff" text="3" toggleGroup="$ex3diff" />
+                  <RadioButton fx:id="ex3Diff4" mnemonicParsing="false" onAction="#getEx3Diff" text="4" toggleGroup="$ex3diff" />
+               </children>
+            </HBox>
+            <HBox fx:id="hBoxEx4Diff" prefHeight="26.0" prefWidth="162.0" spacing="10.0">
+               <children>
+                  <RadioButton fx:id="ex4Diff1" mnemonicParsing="false" onAction="#getEx4Diff" text="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="ex4diff" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="ex4Diff2" mnemonicParsing="false" onAction="#getEx4Diff" text="2" toggleGroup="$ex4diff" />
+                  <RadioButton fx:id="ex4Diff3" mnemonicParsing="false" onAction="#getEx4Diff" text="3" toggleGroup="$ex4diff" />
+                  <RadioButton fx:id="ex4Diff4" mnemonicParsing="false" onAction="#getEx4Diff" text="4" toggleGroup="$ex4diff" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Slider fx:id="energySlider" layoutX="40.0" layoutY="441.0" prefHeight="62.0" prefWidth="621.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="50.0" />
+      <Button fx:id="annotation" layoutX="658.0" layoutY="386.0" mnemonicParsing="false" onAction="#annotation" prefHeight="55.0" prefWidth="127.0" text="Annotation">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="currentScoreLabel" layoutX="231.0" layoutY="513.0" prefHeight="55.0" prefWidth="219.0" text="Current Score: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="46.0" layoutY="386.0" prefHeight="55.0" prefWidth="330.0" text="Recovery Score (How tired are you?) : ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="493.0" prefHeight="39.0" prefWidth="74.0" text="Not tired">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="620.0" layoutY="499.0" prefHeight="26.0" prefWidth="86.0" text="very tired">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

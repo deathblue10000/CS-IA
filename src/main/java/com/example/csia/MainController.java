@@ -17,7 +17,7 @@ public class MainController {
     private Stage stage;
     private Scene scene;
     @FXML
-    private Button recordButton, quoteOfTheDayButton, changeButton;
+    private Button recordButton, quoteOfTheDayButton, changeButton, overloadButton, workoutFeedBack;
 
 
     public void switchToRecordScene(ActionEvent event) throws IOException {
@@ -45,6 +45,28 @@ public class MainController {
     public void switchToChangeScene(ActionEvent event) throws IOException {
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("changeScene.fxml"));
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+
+
+
+    }
+
+    public void switchToOverloadScene(ActionEvent event) throws IOException {
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("overloadScene.fxml"));
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.show();
+
+
+
+    }
+
+    public void switchToWorkoutFeedback(ActionEvent event) throws IOException {
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("feedbackScene.fxml"));
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
