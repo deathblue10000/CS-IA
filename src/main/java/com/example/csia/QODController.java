@@ -11,7 +11,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 
 public class QODController {
 
@@ -27,7 +26,7 @@ public class QODController {
 
     public void showMeme(ActionEvent event){
        try {
-           Image dogMeme = new Image(getClass().getResourceAsStream("/dog.png"));
+           Image dogMeme = new Image(getClass().getResourceAsStream("/picuture/dog.png"));
            memeImageView.setImage(dogMeme);
        }catch (Exception e) {
 

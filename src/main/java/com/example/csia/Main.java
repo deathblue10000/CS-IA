@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.time.LocalDate;
 
 public class Main extends Application {
     @Override
@@ -18,6 +20,22 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        String jdbcUrl = "jdbc:mysql://localhost:3306/calendardb";
+        String username = "root";
+        String password = "password";
+
+        DatabaseOperations databaseOperations = new DatabaseOperations(jdbcUrl, username, password);
+
+
+        LocalDate date = LocalDate.of(2023,01,02);
+        java.sql.Date sqlDate = java.sql.Date.valueOf(date); //java.sql.Date.valueOf()
+        databaseOperations.insertDataIntoDisplayTable(sqlDate, 2, "Swim", "Swdddddim","Swggggggim","Swim");
+
+
+        databaseOperations.retrieveDataFromDisplayTable();
+
+
+
         launch();
     }
 }
