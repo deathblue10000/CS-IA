@@ -2,7 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csia.MainController">
@@ -27,7 +33,126 @@
             <Font size="18.0" />
          </font></Button>
       <Button layoutX="387.0" layoutY="20.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="122.0" text="Button" />
-      <DatePicker layoutX="282.0" layoutY="239.0" prefHeight="34.0" prefWidth="230.0" />
+      <DatePicker fx:id="datepicker" layoutX="587.0" layoutY="239.0" onAction="#getDate" prefHeight="34.0" prefWidth="191.0" />
       <Button fx:id="workoutFeedBack" layoutX="387.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchToWorkoutFeedback" prefHeight="48.0" prefWidth="280.0" text="temp workout feedback" />
+      <BorderPane fx:id="bpcalendar" layoutX="13.0" layoutY="284.0" prefHeight="291.0" prefWidth="768.0">
+         <center>
+            <GridPane fx:id="calendar" gridLinesVisible="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="291.0" prefWidth="768.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="140.60001220703126" minHeight="10.0" prefHeight="72.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="237.4" minHeight="10.0" prefHeight="218.40001220703124" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="monLabel" prefHeight="77.0" prefWidth="117.0" text="Label" wrapText="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tueLabel" prefHeight="77.0" prefWidth="117.0" text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="wedLabel" prefHeight="77.0" prefWidth="117.0" text="Label" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="thurLabel" prefHeight="77.0" prefWidth="117.0" text="Label" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="friLabel" prefHeight="77.0" prefWidth="117.0" text="Label" wrapText="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="satLabel" prefHeight="77.0" prefWidth="117.0" text="Label" wrapText="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sunLabel" prefHeight="77.0" prefWidth="117.0" text="Label" wrapText="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="monVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="monex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="monex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="monex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="monex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="tueVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="tueex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="tueex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="tueex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="tueex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="wedVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="wedex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="wedex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="wedex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="wedex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="thurVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="thurex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="thurex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="thurex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="thurex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="friVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="friex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="friex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="friex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="friex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="satVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="satex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="satex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="satex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="satex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="sunVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <children>
+                        <Button fx:id="sunex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="sunex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="sunex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="sunex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+      <Label fx:id="weekOfLabel" layoutX="88.0" layoutY="239.0" prefHeight="34.0" prefWidth="343.0" text="Please Select a Week">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="previousWeekButton" layoutX="22.0" layoutY="244.0" mnemonicParsing="false" onAction="#changeWeek" text="Previous" />
+      <Button fx:id="nextWeekButton" layoutX="448.0" layoutY="244.0" mnemonicParsing="false" onAction="#changeWeek" text="Next" />
    </children>
 </AnchorPane>

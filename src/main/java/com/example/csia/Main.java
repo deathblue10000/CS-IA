@@ -31,7 +31,6 @@ public class Main extends Application {
         java.sql.Date sqlDate = java.sql.Date.valueOf(date); //java.sql.Date.valueOf()
         databaseOperations.insertDataIntoDisplayTable(sqlDate, 2, "Swim", "Swdddddim","Swggggggim","Swim");
 
-
         databaseOperations.retrieveDataFromDisplayTable();
 
 

@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
@@ -23,7 +24,7 @@ public class overloadController implements Initializable {
     private Scene scene;
 
     @FXML
-    private Button backButton, confirmButton;
+    private Button backButton, confirmButton, generateButton;
 
     @FXML
     private ChoiceBox<String> intensityBox, overloadPeriodBox, deloadPeriodBox, workoutRotationBox, dayOfWeekBox;
@@ -31,6 +32,9 @@ public class overloadController implements Initializable {
     private Label currentLoadLabel, followingLoadLabel, deloadWeekLabel, hoursLabel;
     @FXML
     private Slider hourSlider;
+    @FXML
+    private DatePicker datepick;
+
 
     private String[] intensityOptions = { "Low","Medium", "High", "Intense" }; // options for the check boxes
     private String[] overloadPeriodOptions = { "1 Week", "2 weeks", "3 Weeks", "4 Weeks"};
@@ -39,9 +43,18 @@ public class overloadController implements Initializable {
     private String[] dayOfWeekOptions = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
     private Double[] hoursPerDay = {0.0,0.0,0.0,0.0,0.0,0.0,0.0};
+
+
     private int dow; // day of week variable for hoursPerDay
 
     private double workoutHours;
+
+    private LocalDate startdate;
+
+    public void setdaypick() {
+        startdate = datepick.getValue();
+
+    }
 
 
 
@@ -67,33 +80,6 @@ public class overloadController implements Initializable {
     }
 
     public void commitHoursToDayOfWeek() {
-
-//        try {
-//        if (getDayOfWeek().equals("Monday")) {
-//            dow = 0;
-//            System.out.println("mondaycheck" + dow);
-//        }else if (getDayOfWeek().equals("Tuesday")) {
-//            dow = 1;
-//            System.out.println("tuecheck" + dow);
-//        }else if (getDayOfWeek().equals("Wednesday")) {
-//            dow = 2;
-//            System.out.println("wedcheck" + dow);
-//        }else if (getDayOfWeek().equals("Thursday")) {
-//            dow = 3;
-//            System.out.println("thurcheck" + dow);
-//        }else if (getDayOfWeek().equals("Friday")) {
-//            dow = 4;
-//            System.out.println("fricheck" + dow);
-//        }else if (getDayOfWeek().equals("Saturday")) {
-//            dow = 5;
-//            System.out.println("satcheck" + dow);
-//        }else if (getDayOfWeek().equals("Sunday")) {
-//            dow = 6;
-//            System.out.println("suncheck" + dow);
-//        } } catch (Exception e ){
-//            System.out.println("please select a box before comfirming");
-//
-//        }
 
         try {
             hoursPerDay[Arrays.asList(dayOfWeekOptions).indexOf(getDayOfWeek())] = workoutHours; // the method chanining is esseitiallu getting the index of the day of week chosen in the box and use it as a no.
@@ -158,6 +144,23 @@ public class overloadController implements Initializable {
     public String getDayOfWeek() {
 
         return dayOfWeekBox.getValue(); // method to get the day of week to change the hours
+
+    }
+
+    public void generateWorkout() {
+
+        //startdate
+        int intensity = Arrays.asList(intensityOptions).indexOf(getIntensity());
+        int overloadPeriod =  (Arrays.asList(overloadPeriodOptions).indexOf(getOverloadPeriod()) + 1) * 7;
+        int deloadPeriod = (Arrays.asList(deloadPeriodOptions).indexOf(getDeloadPeriod()) + 2) * 7;
+        int workoutRotation = (Arrays.asList(workoutRotationPeriod).indexOf(getWorkoutRotation()) + 2) * 7;
+
+        System.out.println( intensity + " " + overloadPeriod + " " + deloadPeriod + " " + workoutRotation);
+
+
+
+
+
 
     }
 

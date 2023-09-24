@@ -85,6 +85,13 @@ public class DatabaseOperations {
 
         }
     }
+
+
+
+
+
+
+
     public boolean searchDateInTable(Date dateToSearch) {
         String searchQuery = "SELECT * FROM Display WHERE date = ?";
 
