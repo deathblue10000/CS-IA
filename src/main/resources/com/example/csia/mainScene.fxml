@@ -32,9 +32,7 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button layoutX="387.0" layoutY="20.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="122.0" text="Button" />
       <DatePicker fx:id="datepicker" layoutX="587.0" layoutY="239.0" onAction="#getDate" prefHeight="34.0" prefWidth="191.0" />
-      <Button fx:id="workoutFeedBack" layoutX="387.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchToWorkoutFeedback" prefHeight="48.0" prefWidth="280.0" text="temp workout feedback" />
       <BorderPane fx:id="bpcalendar" layoutX="13.0" layoutY="284.0" prefHeight="291.0" prefWidth="768.0">
          <center>
             <GridPane fx:id="calendar" gridLinesVisible="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="291.0" prefWidth="768.0" BorderPane.alignment="CENTER">
@@ -89,58 +87,58 @@
                   </Label>
                   <VBox fx:id="monVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="monex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="monex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="monex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="monex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="monex1" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="monex2" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="monex3" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="monex4" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
                      </children>
                   </VBox>
                   <VBox fx:id="tueVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="tueex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="tueex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="tueex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="tueex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="tueex1" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="tueex2" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="tueex3" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="tueex4" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
                      </children>
                   </VBox>
                   <VBox fx:id="wedVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="wedex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="wedex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="wedex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="wedex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="wedex1" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="wedex2" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="wedex3" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="wedex4" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
                      </children>
                   </VBox>
                   <VBox fx:id="thurVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="thurex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="thurex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="thurex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="thurex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="thurex1" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="thurex2" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="thurex3" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="thurex4" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
                      </children>
                   </VBox>
                   <VBox fx:id="friVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="friex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="friex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="friex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="friex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="friex1" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="friex2" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="friex3" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="friex4" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
                      </children>
                   </VBox>
                   <VBox fx:id="satVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="satex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="satex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="satex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="satex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="satex1" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="satex2" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="satex3" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="satex4" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
                      </children>
                   </VBox>
                   <VBox fx:id="sunVBox" prefHeight="218.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
-                        <Button fx:id="sunex1" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="sunex2" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="sunex3" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
-                        <Button fx:id="sunex4" mnemonicParsing="false" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="sunex1" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="sunex2" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="sunex3" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
+                        <Button fx:id="sunex4" mnemonicParsing="false" onAction="#switchToShowExercise" prefHeight="40.0" prefWidth="117.0" />
                      </children>
                   </VBox>
                </children>

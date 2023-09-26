@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csia.showExController">
+   <children>
+      <Button fx:id="closeButton" layoutX="31.0" layoutY="26.0" mnemonicParsing="false" onAction="#closeStage" prefHeight="31.0" prefWidth="75.0" text="Close" />
+      <Label layoutX="31.0" layoutY="128.0" prefHeight="40.0" prefWidth="171.0" text="Exercises 1" />
+      <Label fx:id="ex1label" layoutX="31.0" layoutY="191.0" prefHeight="40.0" prefWidth="171.0" />
+      <Label layoutX="31.0" layoutY="252.0" prefHeight="40.0" prefWidth="171.0" text="Exercises 2" />
+      <Label fx:id="ex2label" layoutX="31.0" layoutY="326.0" prefHeight="40.0" prefWidth="171.0" />
+      <Label fx:id="ex3label" layoutX="237.0" layoutY="191.0" prefHeight="40.0" prefWidth="171.0" />
+      <Label fx:id="ex4label" layoutX="237.0" layoutY="292.0" prefHeight="40.0" prefWidth="171.0" />
+      <Label layoutX="237.0" layoutY="128.0" prefHeight="40.0" prefWidth="171.0" text="Exercises 3" />
+      <Label layoutX="237.0" layoutY="252.0" prefHeight="40.0" prefWidth="171.0" text="Exercises 4" />
+      <Button fx:id="feedbackbutton" layoutX="533.0" layoutY="498.0" mnemonicParsing="false" onAction="#switchToFeedbackScene" prefHeight="58.0" prefWidth="205.0" text="Workout FeedBack" />
+   </children>
+</AnchorPane>

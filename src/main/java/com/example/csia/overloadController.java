@@ -14,9 +14,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class overloadController implements Initializable {
 
@@ -50,6 +50,13 @@ public class overloadController implements Initializable {
     private double workoutHours;
 
     private LocalDate startdate;
+    String jdbcUrl = "jdbc:mysql://localhost:3306/calendardb";
+    String username = "root";
+    String password = "password";
+
+    DatabaseOperations databaseOperations = new DatabaseOperations(jdbcUrl, username, password);
+
+    List<Integer> randno = new ArrayList<Integer>();
 
     public void setdaypick() {
         startdate = datepick.getValue();
@@ -147,9 +154,41 @@ public class overloadController implements Initializable {
 
     }
 
+    private static int getRandomNumber(int min, int max) {
+        Random random = new Random();
+        return random.nextInt(max - min + 1) + min;
+    }
+
+    private static List<Integer> generateDistinctiveRandomNumbers(int min, int max, int count) {
+        Set<Integer> randomNumbersSet = new HashSet<>();
+
+        // Generate random numbers until we have 'count' distinct ones
+        while (randomNumbersSet.size() < count) {
+            int randomNumber = getRandomNumber(min, max);
+            randomNumbersSet.add(randomNumber);
+        }
+
+        // Convert the set to a list for easy access
+        List<Integer> randomNumbersList = new ArrayList<>(randomNumbersSet);
+        return randomNumbersList;
+    }
+
+    public int gettype(LocalDate date) {
+        if (date.getDayOfWeek() == DayOfWeek.MONDAY || date.getDayOfWeek() == DayOfWeek.THURSDAY) {
+            return 1;
+        }else if (date.getDayOfWeek() == DayOfWeek.TUESDAY || date.getDayOfWeek() == DayOfWeek.FRIDAY) {
+            return 2;
+        }else if (date.getDayOfWeek() == DayOfWeek.WEDNESDAY || date.getDayOfWeek() == DayOfWeek.SATURDAY) {
+            return 3;
+        }else {
+            return 4;
+        }
+    }
+
     public void generateWorkout() {
 
         //startdate
+        int dayfromstart = 0;
         int intensity = Arrays.asList(intensityOptions).indexOf(getIntensity());
         int overloadPeriod =  (Arrays.asList(overloadPeriodOptions).indexOf(getOverloadPeriod()) + 1) * 7;
         int deloadPeriod = (Arrays.asList(deloadPeriodOptions).indexOf(getDeloadPeriod()) + 2) * 7;
@@ -159,10 +198,80 @@ public class overloadController implements Initializable {
 
 
 
+        randno = generateDistinctiveRandomNumbers(1, 10, 4);
 
+
+
+
+//        String ex1 = databaseOperations.searchRunEx(randno.get(0));
+//        String ex2 = databaseOperations.searchRunEx(randno.get(1));
+//        String ex3 = databaseOperations.searchRunEx(randno.get(2));
+//        String ex4 = databaseOperations.searchRunEx(randno.get(3));
+//
+//        databaseOperations.insertDataIntoDisplayTable(java.sql.Date.valueOf(startdate.plusDays(dayfromstart)), gettype(startdate.plusDays(dayfromstart)), ex1, ex2, ex3, ex4);
+
+            // insertIntoTable(dayfromstart); it works
+
+
+        for (int i = 0; i < overloadPeriod; i ++) {    // this is not done at all
+
+            insertIntoTable(dayfromstart);
+            dayfromstart++;
+
+
+        }
+            //databaseOperations.insertDataIntoDisplayTable(startdate.plusDays(dayfromstart), gettype(startdate.plusDays(dayfromstart)), );
+
+    }
+    public void insertIntoTable(int dayfromstart) {
+
+        if ( gettype(startdate.plusDays(dayfromstart)) == 1 ) {
+
+            String ex1 = databaseOperations.searchRunEx(randno.get(0));
+            String ex2 = databaseOperations.searchRunEx(randno.get(1));
+            String ex3 = databaseOperations.searchRunEx(randno.get(2));
+            String ex4 = databaseOperations.searchRunEx(randno.get(3));
+
+            databaseOperations.insertDataIntoDisplayTable(java.sql.Date.valueOf(startdate.plusDays(dayfromstart)), gettype(startdate.plusDays(dayfromstart)), ex1, ex2, ex3, ex4);
+
+        }else if ( gettype(startdate.plusDays(dayfromstart)) == 2 ) {
+
+            String ex1 = databaseOperations.searchSwimEx(randno.get(0));
+            String ex2 = databaseOperations.searchSwimEx(randno.get(1));
+            String ex3 = databaseOperations.searchSwimEx(randno.get(2));
+            String ex4 = databaseOperations.searchSwimEx(randno.get(3));
+
+            databaseOperations.insertDataIntoDisplayTable(java.sql.Date.valueOf(startdate.plusDays(dayfromstart)), gettype(startdate.plusDays(dayfromstart)), ex1, ex2, ex3, ex4);
+
+        }else if ( gettype(startdate.plusDays(dayfromstart)) == 3 ) {
+
+            String ex1 = databaseOperations.searchCycleEx(randno.get(0));
+            String ex2 = databaseOperations.searchCycleEx(randno.get(1));
+            String ex3 = databaseOperations.searchCycleEx(randno.get(2));
+            String ex4 = databaseOperations.searchCycleEx(randno.get(3));
+
+            databaseOperations.insertDataIntoDisplayTable(java.sql.Date.valueOf(startdate.plusDays(dayfromstart)), gettype(startdate.plusDays(dayfromstart)), ex1, ex2, ex3, ex4);
+
+        }else if ( gettype(startdate.plusDays(dayfromstart)) == 4 ){
+
+            String ex1 = databaseOperations.searchCoreEx(randno.get(0));
+            String ex2 = databaseOperations.searchCoreEx(randno.get(1));
+            String ex3 = databaseOperations.searchCoreEx(randno.get(2));
+            String ex4 = databaseOperations.searchCoreEx(randno.get(3));
+
+            databaseOperations.insertDataIntoDisplayTable(java.sql.Date.valueOf(startdate.plusDays(dayfromstart)), gettype(startdate.plusDays(dayfromstart)), ex1, ex2, ex3, ex4);
+
+        }else {
+            String ex1 = null;
+            String ex2 = null;
+            String ex3 = null;
+            String ex4 = null;
+
+            databaseOperations.insertDataIntoDisplayTable(java.sql.Date.valueOf(startdate.plusDays(dayfromstart)), gettype(startdate.plusDays(dayfromstart)), ex1, ex2, ex3, ex4);
+
+        }
 
 
     }
-
 
 }

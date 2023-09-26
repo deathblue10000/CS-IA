@@ -58,12 +58,12 @@ public class feedbackController implements Initializable {
     int energyLevel;
 
 
-    public void switchToMainScene(ActionEvent event) throws IOException {
+    public void switchToMainScene(ActionEvent event) throws IOException { // not to main but to show ex
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mainScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("showEx.fxml"));
         scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
-        stage.show(); // returning to main scene
+        stage.show();
 
 
     }

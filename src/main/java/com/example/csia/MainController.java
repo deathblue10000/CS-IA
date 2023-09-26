@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
@@ -28,7 +29,7 @@ public class MainController implements Initializable {
 
     private LocalDate today = LocalDate.now();
     @FXML
-    private Button recordButton, quoteOfTheDayButton, changeButton, overloadButton, workoutFeedBack, previousWeekButton, nextWeekButton;
+    private Button recordButton, quoteOfTheDayButton, changeButton, overloadButton, workoutFeedBack, previousWeekButton, nextWeekButton, temp;
     @FXML
     private GridPane calendar = new GridPane();
     @FXML
@@ -63,6 +64,8 @@ public class MainController implements Initializable {
        LocalDate lastDayOfDisplay;
        LocalDate pickeddate = LocalDate.now();
        LocalDate currentdate;
+       LocalDate thefirstdayintheweekcalender;
+
 
 
     public void start() {
@@ -81,6 +84,7 @@ public class MainController implements Initializable {
         LocalDate lastDayOfDisplay;
         System.out.println(pickDate);
 
+
         if (pickDate.getDayOfWeek() != DayOfWeek.MONDAY) {
             firstDayOfDisplay = pickDate.minusDays(pickDate.getDayOfWeek().getValue() -1);
             lastDayOfDisplay = firstDayOfDisplay.plusDays(6);
@@ -90,11 +94,12 @@ public class MainController implements Initializable {
         }
         initializeLabel(firstDayOfDisplay, lastDayOfDisplay);
         setWeekOfLabel(firstDayOfDisplay,lastDayOfDisplay);
+        thefirstdayintheweekcalender = firstDayOfDisplay;
 
         pickeddate = datepicker.getValue();
         currentdate = pickeddate;
     }
-    public void initializeLabel(LocalDate firstday, LocalDate lastday) {
+    public void initializeLabel(LocalDate firstday, LocalDate lastday) { // bugged as hell
         monLabel.setText("Monday " + firstday);
         tueLabel.setText("Tuesday " + firstday.plusDays(1));
         wedLabel.setText("Wednesday " + firstday.plusDays(2));
@@ -104,6 +109,12 @@ public class MainController implements Initializable {
         sunLabel.setText("Sunday " + lastday);
 
         updateButton( firstday, 1);
+        updateButton( firstday.plusDays(1), 2);
+        updateButton( firstday.plusDays(2), 3);
+        updateButton( firstday.plusDays(3), 4);
+        updateButton( firstday.plusDays(4), 5);
+        updateButton( firstday.plusDays(5), 6);
+        updateButton( lastday, 7);
     }
     public void setWeekOfLabel(LocalDate firstday, LocalDate lastday) {
         weekOfLabel.setText("Week Of " + firstday + " To " + lastday);
@@ -145,13 +156,62 @@ public class MainController implements Initializable {
         stage.show();
     }
 
-    public void switchToWorkoutFeedback(ActionEvent event) throws IOException {
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("feedbackScene.fxml"));
-        scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.show();
+//    public void switchToWorkoutFeedback(ActionEvent event) throws IOException {
+//        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("feedbackScene.fxml"));
+//        scene = new Scene(fxmlLoader.load());
+//        stage.setScene(scene);
+//        stage.show();
+//    }
+
+    public void switchToShowExercise(ActionEvent event) throws IOException {
+        Button clickedButton = (Button) event.getSource();
+        String buttonId = clickedButton.getId();
+
+        System.out.println(buttonId);
+
+        LocalDate passindate = returndatetoshow(buttonId);
+        System.out.println(passindate);
+
+
+
+        Stage stage1 = new Stage();
+        FXMLLoader fxmlLoader1 = new FXMLLoader(Main.class.getResource("showEx.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        stage1.setScene(scene1);
+        stage1.show();
+
+        showExController showExController = fxmlLoader1.getController();
+        showExController.displayExercises(passindate);
+
     }
+
+    public LocalDate returndatetoshow(String buttonId) {
+
+        if (buttonId.equals("monex1") || buttonId.equals("monex2") || buttonId.equals("monex3") || buttonId.equals("monex4")) {
+            return thefirstdayintheweekcalender;
+
+        }else if (buttonId.equals("tueex1") || buttonId.equals("tueex2") || buttonId.equals("tueex3") || buttonId.equals("tueex4")) {
+            return thefirstdayintheweekcalender.plusDays(1);
+
+        }else if (buttonId.equals("wedex1") || buttonId.equals("wedex2") || buttonId.equals("wedex3") || buttonId.equals("wedex4")) {
+            return thefirstdayintheweekcalender.plusDays(2);
+
+        }else if (buttonId.equals("thurex1") || buttonId.equals("thurex2") || buttonId.equals("thurex3") || buttonId.equals("thurex4")) {
+
+            return thefirstdayintheweekcalender.plusDays(3);
+        }else if (buttonId.equals("friex1") || buttonId.equals("friex2") || buttonId.equals("friex3") || buttonId.equals("friex4")) {
+
+            return thefirstdayintheweekcalender.plusDays(4);
+        }else if (buttonId.equals("satex1") || buttonId.equals("satex2") || buttonId.equals("satex3") || buttonId.equals("satex4")) {
+            return thefirstdayintheweekcalender.plusDays(5);
+        }else if (buttonId.equals("sunex1") || buttonId.equals("sunex2") || buttonId.equals("sunex3") || buttonId.equals("sunex4")) {
+
+            return thefirstdayintheweekcalender.plusDays(6);
+        }
+        return null;
+    }
+
 
     public void changeWeek() {
         nextWeekButton.setOnAction(new EventHandler<ActionEvent>() {
